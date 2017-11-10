@@ -17,18 +17,20 @@ public class PlayerLife : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		// 別にUpdateでやる必要はない
+		// だって、Lifeが0になるのは弾が当たった瞬間だから。
 		if (Life <= 0) {
 			Debug.Log ("GameOver");
 		}
 	}
 
-	void OntriggerEnter (BoxCollider2D hit){
+	void OnTriggerEnter2D(Collider2D other) {
 
-		if (hit.CompareTag ("Bullet")) {
+		// TODO: 敵の弾と自分の弾を識別する
+		if (other.tag == "Bullet") {
 			Life -= EnemyATK;
 			Debug.Log ("当たったよ");
 			//Debug.Log (Life);
-
 		}
 	}
 }

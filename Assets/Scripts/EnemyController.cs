@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour {
 		count++;
 		//80フレームごとにメソッドを実行
 		if (count % 80 == 0) {
+			// TODO: オーバーフロー防止のため、count = 0をしよう！
 			EnemyShot ();
 		}
 
