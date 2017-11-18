@@ -15,7 +15,7 @@ public class LifeBarCTRL : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
-		Lifecomp = player.GetComponent<PlayerController> ();
+		Lifecomp = player.GetComponent<PlayerLife> ();
 
 		Lifeslider = GameObject.Find ("Slider").GetComponent<Slider> ();
 		Life = 100;
