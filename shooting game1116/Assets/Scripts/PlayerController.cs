@@ -82,11 +82,13 @@ public class PlayerController : MonoBehaviour {
 			//ここで悩み中　どうしたものか
 			//EneATK = GameObject.Find("Player").GetComponent<
 			//int damage = EneATK.EnemyAttack;
-
-			Life -= damage;
-			Debug.Log ("当たったよ");
-			//Debug.Log (Life);
-
+			EnemyController enemyController = hit.GetComponent<EnemyController>();
+			if( enemyController == true ) {
+				int damage = enemyController.EnemyAttack;
+				Life -= damage;
+				Debug.Log ("当たったよ");
+				//Debug.Log (Life);
+			}
 		}
 	}
 
